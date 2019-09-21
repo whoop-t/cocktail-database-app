@@ -1,9 +1,9 @@
 import React from 'react';
 import Drink from '../components/Drink';
 
-const DrinkList = ({ drinks }) => {
+const DrinkList = ({ drinks, onDrinkSelect }) => {
   const renderDrinks = drinks.map((drink) => {
-    return <Drink />;
+    return <Drink drink={drink} onDrinkSelect={onDrinkSelect} />;
   });
 
   return <div>{renderDrinks}</div>;

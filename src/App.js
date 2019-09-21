@@ -3,6 +3,7 @@ import cocktail from './api/cocktail';
 import './App.css';
 import SearchBar from './components/SearchBar';
 import DrinkList from './components/DrinkList';
+import DrinkDetails from './components/DrinkDetails';
 
 class App extends React.Component {
   state = { drinks: [], selectedDrink: null };
@@ -15,16 +16,39 @@ class App extends React.Component {
     const response = await cocktail.get(`/search.php?s=${term}`);
     this.setState({
       drinks: response.data.drinks,
-      selectedDrink: response.data.drinks[0].strDrink
+      selectedDrink: response.data.drinks[0]
+    });
+  };
+
+  onDrinkSelect = (drink) => {
+    this.setState({
+      selectedDrink: drink
     });
   };
 
   render() {
     return (
       <div>
-        <SearchBar onTermSubmit={this.onTermSubmit} />
-        <DrinkList drinks={this.state.drinks} />
-        {this.state.selectedDrink}
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <h1 class="display-4">Cocktail Search</h1>
+            <SearchBar onTermSubmit={this.onTermSubmit} />
+          </div>
+        </div>
+
+        <div className="container">
+          <div className="row">
+            <div className="col-12 col-md-8">
+              <DrinkDetails drink={this.state.selectedDrink} />
+            </div>
+            <div className="col-6 col-md-4 set-scroll" id="style-1">
+              <DrinkList
+                drinks={this.state.drinks}
+                onDrinkSelect={this.onDrinkSelect}
+              />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

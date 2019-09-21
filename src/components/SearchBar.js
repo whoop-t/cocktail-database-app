@@ -17,12 +17,13 @@ class SearchBar extends Component {
     return (
       <div className="">
         <form onSubmit={this.onFormSubmit} className="">
-          <div className="">
-            <label>Drink Search</label>
+          <div className="form-group">
             <input
+              className="form-control"
               onChange={this.onInputChange}
               type="text"
               value={this.state.term}
+              placeholder="Margarita"
             />
           </div>
         </form>
