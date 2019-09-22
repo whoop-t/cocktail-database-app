@@ -21,9 +21,11 @@
 }
 
 body {
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
+  background-image: url(../pictures/toa-heftiba-nbSajB3C098-unsplash2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.title-color {
+  color: #334b68;
 }

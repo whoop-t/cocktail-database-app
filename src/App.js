@@ -31,7 +31,7 @@ class App extends React.Component {
       <div>
         <div className="">
           <div className="container">
-            <h1 className="display-4">Cocktail Search</h1>
+            <h1 className="display-4 title-color">Cocktail Search</h1>
             <SearchBar onTermSubmit={this.onTermSubmit} />
           </div>
         </div>
