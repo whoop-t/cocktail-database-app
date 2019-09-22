@@ -7,7 +7,7 @@ const DrinkIngredient = ({ drink }) => {
   let endValues = [];
   let values = Object.values(drink);
   for (let i = 21; i < 36; i++) {
-    if (values[i] !== '') {
+    if (values[i] !== '' && values[i] !== ' ' && values[i] !== null) {
       endValues.push(values[i]);
     }
   }

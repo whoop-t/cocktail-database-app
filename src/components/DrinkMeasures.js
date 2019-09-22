@@ -7,12 +7,12 @@ const DrinkMeasures = ({ drink }) => {
   let endValues = [];
   let values = Object.values(drink);
   for (let i = 36; i < 51; i++) {
-    if (values[i] !== '' && values[i] !== ' ') {
+    if (values[i] !== '' && values[i] !== ' ' && values[i] !== null) {
       endValues.push(values[i]);
     }
   }
   console.log(endValues);
-  return <div>{endValues.join(' / ')}</div>;
+  return <div>{endValues.join(' | ')}</div>;
 };
 
 export default DrinkMeasures;

@@ -1,6 +1,6 @@
 import React from 'react';
 import cocktail from './api/cocktail';
-import './App.css';
+import './styles/App.css';
 import SearchBar from './components/SearchBar';
 import DrinkList from './components/DrinkList';
 import DrinkDetails from './components/DrinkDetails';
@@ -29,16 +29,16 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <div class="jumbotron jumbotron-fluid">
-          <div class="container">
-            <h1 class="display-4">Cocktail Search</h1>
+        <div className="">
+          <div className="container">
+            <h1 className="display-4">Cocktail Search</h1>
             <SearchBar onTermSubmit={this.onTermSubmit} />
           </div>
         </div>
 
         <div className="container">
           <div className="row">
-            <div className="col-12 col-md-8">
+            <div className="col-12 col-md-8 smaller-details">
               <DrinkDetails drink={this.state.selectedDrink} />
             </div>
             <div className="col-6 col-md-4 set-scroll" id="style-1">

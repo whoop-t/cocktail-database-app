@@ -1,6 +1,8 @@
 import React from 'react';
 import DrinkIngredient from './DrinkIngredient';
 import DrinkMeasures from './DrinkMeasures';
+import DrinkInstructions from './DrinkInstructions';
+import './DrinkDetails.css';
 
 const DrinkDetails = ({ drink }) => {
   if (!drink) {
@@ -8,14 +10,25 @@ const DrinkDetails = ({ drink }) => {
   }
 
   return (
-    <div className="card">
-      <img class="card-img-top" src={drink.strDrinkThumb} />
-      <div className="card-body">
-        <h5 class="card-title">{drink.strDrink}</h5>
-        <p class="card-text">
-          <DrinkIngredient drink={drink} />
-          <DrinkMeasures drink={drink} />
-        </p>
+    <div class="col">
+      <div class="col-sm-9">
+        <div className="card">
+          <img
+            className="card-img-top"
+            alt="Ingredient Card"
+            src={drink.strDrinkThumb}
+          />
+          <div className="card-body">
+            <h5 className="card-title">{drink.strDrink}</h5>
+            <div className="card-text">
+              <DrinkIngredient drink={drink} />
+              <br />
+              <DrinkMeasures drink={drink} />
+              <br />
+              <DrinkInstructions drink={drink} />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
