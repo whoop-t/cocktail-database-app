@@ -14,9 +14,10 @@ class App extends React.Component {
 
   onTermSubmit = async (term) => {
     const response = await cocktail.get(`/search.php?s=${term}`);
+
     this.setState({
-      drinks: response.data.drinks,
-      selectedDrink: response.data.drinks[0]
+      drinks: response.data.drinks || [],
+      selectedDrink: response.data.drinks && response.data.drinks[0]
     });
   };
 

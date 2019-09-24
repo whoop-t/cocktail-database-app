@@ -2,11 +2,17 @@ import React from 'react';
 import DrinkIngredient from './DrinkIngredient';
 import DrinkMeasures from './DrinkMeasures';
 import DrinkInstructions from './DrinkInstructions';
-import './DrinkDetails.css';
 
 const DrinkDetails = ({ drink }) => {
   if (!drink) {
-    return <div>Loading..</div>;
+    return (
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">No Results</h1>
+          <p class="lead">Please check spelling or try another drink.</p>
+        </div>
+      </div>
+    );
   }
 
   return (
