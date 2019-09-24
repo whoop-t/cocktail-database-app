@@ -25,6 +25,8 @@ class App extends React.Component {
     this.setState({
       selectedDrink: drink
     });
+
+    window.scrollTo(0, 0);
   };
 
   render() {
@@ -39,10 +41,15 @@ class App extends React.Component {
 
         <div className="container">
           <div className="row">
-            <div className="col-12 col-md-8 smaller-details">
-              <DrinkDetails drink={this.state.selectedDrink} />
+            <div className="col-lg-8 col-md-8 col-0">
+              <div>
+                <DrinkDetails drink={this.state.selectedDrink} />
+              </div>
             </div>
-            <div className="col-6 col-md-4 set-scroll" id="style-1">
+            <div
+              className="col-lg-4 col-md-4 col set-scroll hand-pointer"
+              id="style-1"
+            >
               <DrinkList
                 drinks={this.state.drinks}
                 onDrinkSelect={this.onDrinkSelect}
