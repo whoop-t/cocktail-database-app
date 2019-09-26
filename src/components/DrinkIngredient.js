@@ -11,7 +11,6 @@ const DrinkIngredient = ({ drink }) => {
       endValues.push(values[i]);
     }
   }
-  console.log(endValues);
   return <div>{endValues.join(' / ')}</div>;
 };
 

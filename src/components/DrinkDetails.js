@@ -6,18 +6,18 @@ import DrinkInstructions from './DrinkInstructions';
 const DrinkDetails = ({ drink }) => {
   if (!drink) {
     return (
-      <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-4">No Results</h1>
-          <p class="lead">Please check spelling or try another drink.</p>
+      <div className="jumbotron jumbotron-fluid">
+        <div className="container">
+          <h1 className="display-4">No Results</h1>
+          <p className="lead">Please check spelling or try another drink.</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div class="col">
-      <div class="col-sm-9">
+    <div className="col">
+      <div className="col-sm-9">
         <div className="card">
           <img
             className="card-img-top"
